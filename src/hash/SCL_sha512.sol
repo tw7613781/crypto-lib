@@ -17,7 +17,7 @@
 
 pragma solidity >=0.8.19 <0.9.0;
 
-import "../../external/sha512/Sha2Ext.sol";
+import "../external/sha512/Sha2Ext.sol";
 
 library SCL_sha512 {
  

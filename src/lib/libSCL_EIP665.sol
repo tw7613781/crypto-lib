@@ -26,7 +26,7 @@ import {ec_isOnCurve} from "../elliptic/SCL_ecOncurve.sol";
 //import point double multiplication and accumulation (RIP7696)
 import "../elliptic/SCL_mulmuladdX_fullgenW.sol";
 
-import "../../external/sha512/Sha2Ext.sol";
+import "../external/sha512/Sha2Ext.sol";
 import "../hash/SCL_sha512.sol";
 
 library SCL_EIP6565{
