@@ -63,7 +63,7 @@ library SCL_EIP6565{
      * @param KPubC The compressed  point of Edwards form, most significant bit encoding parity
      * @return x The x-coordinate of the point in affine representation
     */
- function edDecompressX(uint256 KPubC) internal returns (uint256 x){
+ function edDecompressX(uint256 KPubC) public returns (uint256 x){
    
    uint256 sign=(KPubC>>255)&1;//parity bit is the highest bit of compressed point
    uint256 y=KPubC&0x7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff;
@@ -113,7 +113,7 @@ library SCL_EIP6565{
     }
 
 
-function Edwards2WeierStrass(uint256 x,uint256 y)  internal view returns (uint256 X, uint256 Y){
+function Edwards2WeierStrass(uint256 x,uint256 y)  public view returns (uint256 X, uint256 Y){
   //wx = ((1 + ey) * (1 - ey)^-1) + delta
   X=addmod(delta, mulmod(addmod(1,y,p),ModInv(addmod(1, p-y,p),p),p) ,p);
   //  wy = (c * (1 + ey)) * ((1 - ey) * ex)^-1
